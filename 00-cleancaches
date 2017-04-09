@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# cron script to delete all files in pacman cache directory
+
+if [[ -f /var/lib/pacman/db.lck ]]
+then
+        echo "* pacman lock file found, doing nothing."
+        exit 0
+else
+        echo "* pacman lock file not found, cleaning cache"
+        rm -rvf /var/cache/pacman/pkg/*
+fi
