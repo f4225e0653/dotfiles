@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # cron script to delete all files in pacman cache directory
+# suggest hourly use if cache is located in RAM
 
 if [[ -f /var/lib/pacman/db.lck ]]
 then
